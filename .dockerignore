@@ -1,0 +1,11 @@
+.git
+.cursor
+.venv
+docs
+**/__pycache__
+**/*.pyc
+simplelogin_adapter
+data
+secret
+*.db
+*.md
