@@ -3,5 +3,5 @@ __pycache__/
 *.pyc
 data/
 secret
-simplelogin_adapter/
+simplelogin_contacts/
 *.db

@@ -4,7 +4,7 @@
 docs
 **/__pycache__
 **/*.pyc
-simplelogin_adapter
+simplelogin_contacts
 data
 secret
 *.db

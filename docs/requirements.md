@@ -9,7 +9,7 @@
 | AUTH-05 | Sessions are server-side, idle out after 14 days, and use an `HttpOnly` `SameSite=Lax` cookie. State-changing forms send a CSRF token. | Done |
 | SEND-01 | An exact alias match is used. A missing alias is created when a suffix fits. The contact create is idempotent. | Done |
 | SEND-02 | The page shows `reverse_alias_address` and opens Proton Mail with that address in To. | Done |
-| OPS-01 | `docker-compose.yaml` runs `simplelogin_adapter` on port 4189 with the `./simplelogin_adapter` volume and a health check. | Done |
+| OPS-01 | `docker-compose.yaml` runs `simplelogin_contacts` on port 5982 with the `./simplelogin_contacts` volume and a health check. | Done |
 | OPS-02 | `TZ` is an IANA name. Unset stays `Etc/UTC`. | Done |
 | OPS-03 | Logs go to stdout and omit the password, API key, session id, and HIBP prefix. | Done |
 | OPS-04 | GitHub Actions builds the image and pushes `:latest` and `:<git sha>` to GHCR on push to `main`. | Done |

@@ -55,7 +55,7 @@ class Config:
 
     @classmethod
     def from_env(cls):
-        port_raw = _required("PORT", "4189")
+        port_raw = _required("PORT", "5982")
         try:
             port = int(port_raw)
         except ValueError as exc:

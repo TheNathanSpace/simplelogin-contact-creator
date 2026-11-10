@@ -1,20 +1,20 @@
 services:
-  simplelogin_adapter:
-    image: ghcr.io/TheNathanSpace/simplelogin-contact-creator:latest
+  simplelogin_contacts:
+    image: ghcr.io/thenathanspace/simplelogin-contact-creator:latest
     pull_policy: always
-    container_name: simplelogin_adapter
+    container_name: simplelogin_contacts
     restart: unless-stopped
     ports:
-      - "4189:4189"
+      - "5982:5982"
     environment:
       TZ: Etc/UTC
       TRUSTED_PROXIES: ""
       COOKIE_SECURE: "1"
       SIMPLELOGIN_BASE_URL: https://app.simplelogin.io
     volumes:
-      - ./simplelogin_adapter:/config
+      - ./simplelogin_contacts:/config
     healthcheck:
-      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:4189/health')"]
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:5982/health')"]
       interval: 30s
       timeout: 5s
       retries: 3

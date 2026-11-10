@@ -1,8 +1,8 @@
 # Status
 
-Last updated: 2026-11-10 — initial SimpleLogin adapter.
+Last updated: 2026-11-10 — default listen port 5982.
 
-Latest change: Account setup, reverse-alias form, container, GHCR publish workflow, and startup checks for missing settings.
+Latest change: Default port is 5982 in the app, image, and compose file. Compose image is lowercase. Service, container, and volume are `simplelogin_contacts`.
 
 ## State
 

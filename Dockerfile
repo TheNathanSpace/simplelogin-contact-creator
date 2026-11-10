@@ -13,12 +13,12 @@ ENV PYTHONUNBUFFERED=1 \
     TZ=Etc/UTC \
     DATA_DIR=/config/data \
     SECRET_PATH=/config/secret \
-    PORT=4189 \
+    PORT=5982 \
     COOKIE_SECURE=1
 
-EXPOSE 4189
+EXPOSE 5982
 
 HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
-    CMD ["python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:4189/health')"]
+    CMD ["python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:5982/health')"]
 
 CMD ["python", "-m", "app"]

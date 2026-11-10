@@ -11,9 +11,9 @@ docker compose up -d
 docker compose logs -f
 ```
 
-The image is `ghcr.io/TheNathanSpace/simplelogin-contact-creator:latest`. GitHub Actions publishes that name, lowercased, on push to `main`.
+The image is `ghcr.io/thenathanspace/simplelogin-contact-creator:latest`. GitHub Actions publishes that name on push to `main`.
 
-Open port 4189. The setup code is in the container log.
+Open port 5982. The setup code is in the container log.
 
 A missing or unusable `PORT`, `HOST`, `COOKIE_SECURE`, `SIMPLELOGIN_BASE_URL`, `DATA_DIR`, or `SECRET_PATH` exits the process with one `ERROR` line. `restart: unless-stopped` starts the container again until the setting is fixed. `TZ` unset or unknown stays `Etc/UTC`.
 
@@ -44,11 +44,11 @@ The API key is checked with `GET /api/user_info` before it is saved. It is encry
 | `SIMPLELOGIN_BASE_URL` | `https://app.simplelogin.io` | API host. Set this for a self-hosted SimpleLogin. |
 | `DATA_DIR` | `/config/data` in the image | SQLite directory. |
 | `SECRET_PATH` | `/config/secret` in the image | AES key file. |
-| `PORT` | `4189` | Listen port. |
+| `PORT` | `5982` | Listen port. |
 
 ## Volume
 
-`./simplelogin_adapter` mounts at `/config`.
+`./simplelogin_contacts` mounts at `/config`.
 
 | Path | Contents |
 | --- | --- |
@@ -59,7 +59,7 @@ A copy of `/config/data` does not include the key. A copy of the whole volume do
 
 ## Reverse proxy
 
-Terminate HTTPS in front of port 4189. Send HSTS with `max-age` of at least six months. Set `TRUSTED_PROXIES` to the proxy address. Leave `COOKIE_SECURE` at `1`.
+Terminate HTTPS in front of port 5982. Send HSTS with `max-age` of at least six months. Set `TRUSTED_PROXIES` to the proxy address. Leave `COOKIE_SECURE` at `1`.
 
 Login is still required.
 
